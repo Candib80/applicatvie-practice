@@ -6,6 +6,12 @@ import { data } from "../data/data";
 
 export function lowMoonsPlanets(data) {
   // Your code goes here...
+  const lowMoons = data.planets
+    .filter(planet => planet.hasOwnProperty('moons') === true)
+    .filter(planet => planet.moons.length < 10)
+    .map(planetName => planetName.name);
+
+  return lowMoons;
 }
 
 
